@@ -6,6 +6,7 @@ const arrayBoard = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 let playerTurn = true // True === X && False === O
 let isGameStopped = false;
+let winningCombos = [];
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -88,27 +89,32 @@ function parseNodeIndex(element) {
 
 // Checks if there is a winner and proceeds to end game if true
 function checkGameStatus() {
-  if (arrayBoard[0] + arrayBoard[1] + arrayBoard [2] === 3 ||
-      arrayBoard[3] + arrayBoard[4] + arrayBoard [5] === 3 ||
-      arrayBoard[6] + arrayBoard[7] + arrayBoard [8] === 3 ||
-      arrayBoard[0] + arrayBoard[3] + arrayBoard [6] === 3 ||
-      arrayBoard[1] + arrayBoard[4] + arrayBoard [7] === 3 ||
-      arrayBoard[2] + arrayBoard[4] + arrayBoard [8] === 3 ||
-      arrayBoard[0] + arrayBoard[4] + arrayBoard [8] === 3 ||
-      arrayBoard[2] + arrayBoard[4] + arrayBoard [6] === 3 ) {
-        isGameStopped = true;
-        headerMessage.innerText = "Player X is the Winner!!!";
-  }
+  // Updates the array to check values
+  winningCombos = [
+    [arrayBoard[0], arrayBoard[1],arrayBoard [2]],
+    [arrayBoard[3], arrayBoard[4],arrayBoard [5]],
+    [arrayBoard[6], arrayBoard[7],arrayBoard [8]],
+    [arrayBoard[0], arrayBoard[3],arrayBoard [6]],
+    [arrayBoard[1], arrayBoard[4],arrayBoard [7]],
+    [arrayBoard[2], arrayBoard[5],arrayBoard [8]],
+    [arrayBoard[0], arrayBoard[4],arrayBoard [8]],
+    [arrayBoard[2], arrayBoard[4],arrayBoard [6]]
+  ];
 
-  if (arrayBoard[0] + arrayBoard[1] + arrayBoard [2] === -3 ||
-      arrayBoard[3] + arrayBoard[4] + arrayBoard [5] === -3 ||
-      arrayBoard[6] + arrayBoard[7] + arrayBoard [8] === -3 ||
-      arrayBoard[0] + arrayBoard[3] + arrayBoard [6] === -3 ||
-      arrayBoard[1] + arrayBoard[4] + arrayBoard [7] === -3 ||
-      arrayBoard[2] + arrayBoard[4] + arrayBoard [8] === -3 ||
-      arrayBoard[0] + arrayBoard[4] + arrayBoard [8] === -3 ||
-      arrayBoard[2] + arrayBoard[4] + arrayBoard [6] === -3 ) {
+  switch(playerTurn){
+    case true:
+      if ( winningCombos.some( combo => { return combo[0] + combo[1] + combo[2] === 3; })) {
+        isGameStopped = true; 
+        headerMessage.innerText = "Player X is the Winner!!!";
+      }
+      break;
+    case false:
+      if ( winningCombos.some( combo => { return combo[0] + combo[1] + combo[2] === -3; })) {
         isGameStopped = true; 
         headerMessage.innerText = "Player O is the Winner!!!";
-  };
+      }
+      break;
+    default:
+      break;
+  }
 };
