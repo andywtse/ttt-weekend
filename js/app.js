@@ -37,7 +37,7 @@ function init() {
 
   // Clears innerText of the squares
   squares.forEach(square => {
-    square.innerText = '';
+    square.innerHTML = '';
   });
 };
 
@@ -57,12 +57,12 @@ function handleClick(evt) {
 function render(evt) {
 
   if (playerTurn) {
-    evt.target.innerText = 'X';
+    evt.target.innerHTML = '<img class="animated-x" src="resource/gif/animatedX.gif" alt="X" />';
     headerMessage.innerText = "Player's O Turn";
     let nodeIndex = parseNodeIndex(evt.target);
     arrayBoard[nodeIndex] = 1;
   } else{
-    evt.target.innerText = 'O';
+    evt.target.innerHTML = '<img class="animated-o" src="resource/gif/animatedCircle.gif" alt="X" />';
     headerMessage.innerText = "Player's X Turn";
     let nodeIndex = parseNodeIndex(evt.target);
     arrayBoard[nodeIndex] = -1;
