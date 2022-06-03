@@ -10,14 +10,16 @@ let winningCombos = [];
 
 /*------------------------ Cached Element References ------------------------*/
 
-const board = document.querySelector('.board');
+const board = document.querySelectorAll('.square');
 const squares = document.querySelectorAll('.square');
 const resetButton = document.getElementById('reset-button');
 const headerMessage = document.getElementById('message');
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-board.addEventListener("click", handleClick);
+board.forEach( square => {
+  square.addEventListener("click", handleClick);
+});
 resetButton.addEventListener('click', init);
 
 /*-------------------------------- Functions --------------------------------*/
