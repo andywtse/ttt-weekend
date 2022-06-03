@@ -35,6 +35,11 @@ div.square {
   font-size: 15vmin;
   text-align: center;
   vertical-align: middle;
+  transition: all 0.2s ease-in-out;
+}
+
+div.square:hover {
+  background-color: rgba(0,0,0,0.6);
 }
 
 button {
@@ -42,6 +47,7 @@ button {
   border: 2px solid white;
   border-radius: 7px;
   font-size:  5vmin;
+  transition: all 0.2s ease-in-out;
 }
 
 .animated-x {
@@ -54,4 +60,9 @@ button {
   display: block;
   height:100%;
   width:100%;
+}
+
+button:hover {
+  background-color: rgba(128,128,128,0.6);
+  color: white;
 }
