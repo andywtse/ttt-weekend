@@ -6,6 +6,7 @@ A recreation of a solved game with a bit of flair
 <br>
 Resources
 ----
+<br>
 [Minimal Wallpaper](https://wallpapersmug.com/w/download/3840x2160/landscape-minimal-stars-cold-5k-f0932e)
 
 [Animated X Logo](https://www.bing.com/images/search?view=detailV2&ccid=ICyyBk%2fM&id=DC3D83ED224834C179706DE1C756C8D1EA126FD7&thid=OIP.ICyyBk_McA1jKhFR3RHqAAAAAA&mediaurl=https%3a%2f%2fmedia.giphy.com%2fmedia%2fkMxR9EIfVMgmY%2fgiphy.gif&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.202cb2064fcc700d632a1151dd11ea00%3frik%3d128S6tHIVsfhbQ%26pid%3dImgRaw%26r%3d0&exph=300&expw=329&q=letter+x+galaxy&simid=608030845337349128&FORM=IRPRST&ck=5A8DDAE38F3B597C5DF0921CE062F22D&selectedIndex=1&qft=+filterui%3aphoto-animatedgif&ajaxhist=0&ajaxserp=0)
